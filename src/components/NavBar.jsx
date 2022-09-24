@@ -18,11 +18,11 @@ const NavBar = () => {
         setLogo(!logo);
     }
   return (
-    <div className="flex justify-between items-center h-20 px-4">
+    <div className="flex w-full justify-between items-center h-20 px-4 absolute z-10 text-white">
 
       {/* 3 items for navbar, logo-navbar-loginIcons */}
       <div>
-        <h1 onClick={handleClick} className={logo? "hidden":"block"}>BEACHES.</h1>
+        <h1 onClick={handleClick} className={logo? "hidden":""}>BEACHES.</h1>
       </div>
 
 
@@ -43,11 +43,12 @@ const NavBar = () => {
         {/* hamburger menu for mobile */}
         {/* needsz-index */}
         <div onClick={handleClick} className="block md:hidden z-10 ">
-            {click?<AiOutlineClose size={20}/> :<HiOutlineMenuAlt4 size={20}/>}
+            {click?<AiOutlineClose className="text-black" size={20}/> :<HiOutlineMenuAlt4 size={20}/>}
         </div>
 
         {/* dropdown menu for mobile*/}
-        <div onClick={handleClick} className={click? "absolute left-0 top-0 w-full bg-gray-100/90 px-4 py-7 flex flex-col":"absolute top-[-100%] md:hidden duration-300gu"}>
+        <div onClick={handleClick} className={click? "absolute text-black left-0 top-0 w-full bg-gray-100/90 px-4 py-7 flex flex-col duration-300":"absolute left-[-100%] duration-300"}>
+            
             <ul>
                 <h1>BEACHES.</h1>
                 <li className="border-b">Home</li>
